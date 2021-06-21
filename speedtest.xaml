@@ -1,0 +1,45 @@
+﻿<UserControl x:Name="usrCtrlSpeedTest" x:Class="Totally_Not_a_Program.speedtest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Totally_Not_a_Program"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="523" d:DesignWidth="951" Foreground="{x:Null}" Loaded="UserControl_Loaded" Width="523" Height="523">
+    <Grid Background="#FF77AC36">
+        <Grid x:Name="gdrMain" Background="#FFE2E2E2">
+            <Grid x:Name="gdrSpeed" Height="282" Margin="42,117,43,0" VerticalAlignment="Top">
+                <lvc:AngularGauge RenderOptions.BitmapScalingMode="HighQuality" x:Name="gdrSpeedTestAngular" Value="{Binding Value}" FromValue="0" ToValue="100" LabelsStep="10" TicksStep="5" Wedge="300" TicksForeground="White" Foreground="White" FontWeight="Bold" FontSize="16" SectionsInnerRadius=".5">
+                    <lvc:AngularGauge.Sections>
+                        <lvc:AngularSection x:Name="lvcSectionUltraLow" FromValue="0" ToValue="5" Fill="#FFFF4545"/>
+                        <lvc:AngularSection x:Name="lvcSectionLow" FromValue="5" ToValue="15" Fill="#FFFF8045"/>
+                        <lvc:AngularSection x:Name="lvcSectionMediumLow" FromValue="15" ToValue="25" Fill="#FFFFB345"/>
+                        <lvc:AngularSection x:Name="lvcSectionMedium" FromValue="25" ToValue="50" Fill="#FFEEFF45"/>
+                        <lvc:AngularSection x:Name="lvcSectionMediumFast" FromValue="50" ToValue="75" Fill="#FFC4FF45"/>
+                        <lvc:AngularSection x:Name="lvcSectionFast" FromValue="75" ToValue="100" Fill="#FF89FF45"/>
+                    </lvc:AngularGauge.Sections>
+                </lvc:AngularGauge>
+                <Ellipse Margin="148,70,148,69" Fill="#FFE2E2E2"/>
+                <TextBlock x:Name="lblMS" HorizontalAlignment="Left" Margin="264,153,0,0" TextWrapping="Wrap" Text="ms" VerticalAlignment="Top" Foreground="#FFBBBBBB" Height="15" RenderTransformOrigin="0.907,0.533"/>
+                <TextBlock x:Name="lblPingMS" Margin="158,114,179,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Foreground="Black" FontSize="48" TextAlignment="Center" HorizontalAlignment="Center" Width="101"/>
+            </Grid>
+            <Grid x:Name="gdrIp" HorizontalAlignment="Left" Height="43" Margin="42,450,0,0" VerticalAlignment="Top" Width="169">
+                <Image RenderOptions.BitmapScalingMode="HighQuality" x:Name="imgIp" Margin="10,10,131,5" Source="Resources/outline_account_circle_white_48dp.png"/>
+                <TextBlock x:Name="lblIp" HorizontalAlignment="Left" Margin="43,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="121" Foreground="#FFBBBBBB" FontSize="16"/>
+            </Grid>
+            <Grid x:Name="gdrHost" HorizontalAlignment="Left" Height="43" Margin="326,450,0,0" VerticalAlignment="Top" Width="152">
+                <Image RenderOptions.BitmapScalingMode="HighQuality" x:Name="imgHost" HorizontalAlignment="Left" Margin="5,8,0,7" Width="28" Source="Resources/outline_explore_white_48dp.png"/>
+                <TextBlock x:Name="lblHost" HorizontalAlignment="Left" Margin="33,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="28" Width="116" Foreground="#FFBBBBBB" FontSize="16"/>
+            </Grid>
+            <Button x:Name="btnTest" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="154" Height="63" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnTest_Click"/>
+            <Image RenderOptions.BitmapScalingMode="HighQuality" x:Name="imgUpload" HorizontalAlignment="Left" Height="28" Margin="332,412,0,0" VerticalAlignment="Top" Width="28" Source="Resources/outline_arrow_upward_white_48dp.png"/>
+            <TextBlock x:Name="lblMbpsUpload" HorizontalAlignment="Left" Margin="436,422,0,0" TextWrapping="Wrap" Text="Mbps" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+            <TextBlock x:Name="lblUploadMbps" HorizontalAlignment="Left" Margin="364,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="28" Foreground="Black" FontSize="20"/>
+            <Image RenderOptions.BitmapScalingMode="HighQuality" x:Name="imgDownload" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="28" Source="Resources/outline_arrow_downward_white_48dp.png" Margin="52,412,0,0"/>
+            <TextBlock x:Name="lblDownloadMbps" HorizontalAlignment="Left" Margin="86,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="28" Foreground="Black" TextAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="lblMbpsDownload" HorizontalAlignment="Left" Margin="162,422,0,0" TextWrapping="Wrap" Text="Mbps" VerticalAlignment="Top" Foreground="#FFBBBBBB" RenderTransformOrigin="0.756,-0.146"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
